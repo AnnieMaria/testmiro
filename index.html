@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script>
+
+$(document).ready(function(){
+
+  alert('hello');
+  
+});
+    miro.onReady(() => {
+    miro.initialize({
+        extensionPoints: {
+          toolBar: {
+            title: 'Miro Custom Help',
+            svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"/>',
+            onClick: () => {
+            alert('hi')
+            }
+          }
+        }
+      })
+    })
+    </script>
+</head>
+</html>
