@@ -10,20 +10,32 @@ $(document).ready(function(){
   alert('hello from custom app');
   
 });
+const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
+
       miro.onReady(() => {
         miro.initialize({
           extensionPoints: {
             bottomBar: async () => {
-                 title:'mirohelpicon',
-                 svgIcon:'<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2" />',
-                  onClick:() => {
-            alert('hi');
-            },
-              
+              const currentUser = await miro.getCurrentUser()
+              const signedIn = currentUser.signedIn
+              if (signedIn) {
+                return {
+                  title: 'account member example',
+                  svgIcon: icon,
+                  onClick: sayHi,
+                }
+              }
             },
           },
         })
       })
+
+      function sayHi() {
+        alert('Hi!')
+      }
+    </script>
+  </head>
+</html>
 
     </script>
   </head>
