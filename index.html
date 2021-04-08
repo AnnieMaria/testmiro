@@ -16,15 +16,13 @@ const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stro
         miro.initialize({
           extensionPoints: {
             bottomBar: async () => {
-              const currentUser = await miro.getCurrentUser()
-              const signedIn = currentUser.signedIn
-              if (signedIn) {
+              
                 return {
                   title: 'account member example',
                   svgIcon: icon,
                   onClick: sayHi,
                 }
-              }
+              
             },
           },
         })
