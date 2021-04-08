@@ -14,18 +14,17 @@ $(document).ready(function(){
         miro.initialize({
           extensionPoints: {
             bottomBar: async () => {
-             
-                  title: 'mirohelpicon',
+                 title: 'mirohelpicon',
                   svgIcon: '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>',
-                  onClick: sayHi,
+                  onClick: sayHi
               
-            },
-          },
+            }
+          }
         })
       })
 
       function sayHi() {
-        alert('Hi!')
+        alert('Hi!');
       }
     </script>
   </head>
