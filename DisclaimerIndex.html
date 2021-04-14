@@ -9,6 +9,9 @@ $(document).ready(function(){
 
 });
     miro.onReady(() => {
+        miro.addListener('WIDGETS_CREATED', widget => {
+  alert('your board is updated');
+})
    //miro.board.ui.openModal('https://janardhanreddyy.github.io/testmiro/disclaimer.html') 
     })
     </script>
