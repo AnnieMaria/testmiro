@@ -6,13 +6,13 @@
     <script>
 
 $(document).ready(function(){
-
+alert('new api');
 });
     miro.onReady(() => {
         miro.addListener('SELECTION_UPDATED', widget => {
   alert('your board is updated');
 })
-   //miro.board.ui.openModal('https://janardhanreddyy.github.io/testmiro/disclaimer.html') 
+   miro.board.ui.openModal('https://localhost:44383/ClientApp/public/MiroHelpAPIIndex.html') 
     })
     </script>
 </head>
