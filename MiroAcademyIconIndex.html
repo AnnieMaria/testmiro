@@ -7,11 +7,9 @@
       
 $(document).ready(function(){
 
- // alert('hello from custom app');
-  
 });
-const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
-//const icon = '<i class="bi bi-book"></i>'
+//const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
+const icon = '<img class="content-nav-item__image" width="35" height="35" src="/api/inspiration-center/content/img/academy.svg">'
 
       miro.onReady(() => {
         miro.initialize({
@@ -21,7 +19,7 @@ const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stro
                 return {
                   title: 'Miro Academy',
                   svgIcon: icon,
-                  onClick: redirectUrl,
+                  onClick: redirectToAcademyUrl,
                 }
               
             },
@@ -30,7 +28,7 @@ const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stro
         })
       })
 
-      function redirectUrl() {
+      function redirectToAcademyUrl() {
         
         window.open('https://academy.miro.com/','_blank');
       }
