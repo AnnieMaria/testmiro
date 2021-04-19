@@ -19,13 +19,23 @@ const icon = '<i class="bi bi-book"></i>'
             bottomBar: async () => {
               
                 return {
-                 [{ title: 'ServiceNow Support',
+                 title: 'ServiceNow Support',
                   svgIcon: icon,
-                  onClick: redirectURL('http://go/srm')},
-                   
-                  { title: 'Miro Academy Learning',
+                  onClick: redirectURL('http://go/srm')
+                  
+                }
+              
+            },
+       
+          },
+        extensionPoints: {
+            bottomBar: async () => {
+              
+                return {
+                title: 'Miro Academy Learning',
                   svgIcon: icon1,
-                  onClick: redirectURL('https://academy.miro.com/')}
+                  onClick: redirectURL('https://academy.miro.com/')
+                
                 }
               
             },
