@@ -21,7 +21,7 @@ const icon = '<i class="bi bi-book"></i>'
             return  {
                 title: 'ServiceNow Support',
                   svgIcon: icon,
-                  onClick: redirectURL('http://go/srm')
+                  onClick: redirectURL
             }
             },
               
@@ -32,9 +32,9 @@ const icon = '<i class="bi bi-book"></i>'
        
       })
 
-      function redirectURL(url) {
-        alert('Updated Script2');
-        window.open(url,'_blank');
+      function redirectURL() {
+        alert('Updated Script3');
+        window.open('http://go/srm/,'_blank');
       }
      function sayHi() {
         alert('Updated Script');
