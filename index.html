@@ -10,36 +10,34 @@ $(document).ready(function(){
  // alert('hello from custom app');
   
 });
-const icon1 = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
-const icon = '<i class="bi bi-book"></i>'
+const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
+//const icon = '<i class="bi bi-book"></i>'
 
       miro.onReady(() => {
         miro.initialize({
           extensionPoints: {
             bottomBar: async () => {
               
-            return  {
-                title: 'ServiceNow Support',
-                  svgIcon: icon1,
-                  onClick: redirectURL,
-            }
-            },
+                return {
+                  title: 'new Help',
+                  svgIcon: icon,
+                  onClick: sayHi,
+                }
               
             },
-       
-         
+            
+          },
         })
-       
       })
 
-      function redirectURL() {
-        alert('Updated Script3');
-        window.open('http://go/srm/,'_blank');
-      }
-     function sayHi() {
+      function sayHi() {
         alert('Updated Script');
         window.open('https://academy.miro.com/','_blank');
       }
+    </script>
+  </head>
+</html>
+
     </script>
   </head>
 </html>
