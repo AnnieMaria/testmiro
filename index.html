@@ -10,7 +10,7 @@ $(document).ready(function(){
  // alert('hello from custom app');
   
 });
-//const icon = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
+const icon1 = '<circle cx="12" cy="12" r="9" fill="none" fill-rule="evenodd" stroke="currentColor" stroke-width="2"></circle>'
 const icon = '<i class="bi bi-book"></i>'
 
       miro.onReady(() => {
@@ -19,17 +19,31 @@ const icon = '<i class="bi bi-book"></i>'
             bottomBar: async () => {
               
                 return {
-                  title: 'new Help',
+                  title: 'ServiceNow Support',
                   svgIcon: icon,
-                  onClick: sayHi,
+                  onClick: redirectURL('http://go/srm'),
                 }
               
             },
+             bottomBar: async () => {
+              
+                return {
+                  title: 'learning',
+                  svgIcon: icon1,
+                  onClick: redirectURL('https://academy.miro.com/'),
+                }
+              
+            },
+            
           },
         })
       })
 
-      function sayHi() {
+      function redirectURL(url) {
+        alert('new Updated Script');
+        window.open(url,'_blank');
+      }
+     function sayHi() {
         alert('Updated Script');
         window.open('https://academy.miro.com/','_blank');
       }
