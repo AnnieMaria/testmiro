@@ -25,16 +25,22 @@ const icon = '<i class="bi bi-book"></i>'
                 }
               
             },
-             bottomBar: async () => {
+       
+          },
+        })
+        
+        miro.initialize({
+          extensionPoints: {
+            bottomBar: async () => {
               
                 return {
-                  title: 'learning',
+                  title: 'Miro Academy Learning',
                   svgIcon: icon1,
                   onClick: redirectURL('https://academy.miro.com/'),
                 }
               
             },
-            
+       
           },
         })
       })
