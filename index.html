@@ -18,17 +18,15 @@ const icon = '<i class="bi bi-book"></i>'
           extensionPoints: {
             bottomBar: async () => {
               
-                return {
-                 title: 'ServiceNow Support',
+              {
+                title: 'ServiceNow Support',
                   svgIcon: icon,
                   onClick: redirectURL('http://go/srm')
                   
-                }
+                
               
             },
-            bottomBar: async () => {
-              
-                return {
+                {
                 title: 'Miro Academy Learning',
                   svgIcon: icon1,
                   onClick: redirectURL('https://academy.miro.com/')
@@ -37,13 +35,13 @@ const icon = '<i class="bi bi-book"></i>'
               
             },
        
-          },
+         
         })
        
       })
 
       function redirectURL(url) {
-        alert('Updated Script1');
+        alert('Updated Script2');
         window.open(url,'_blank');
       }
      function sayHi() {
