@@ -9,7 +9,7 @@
 $(document).ready(function(){
     alert("in ready");
     
-            const authorizeOptions = {
+           /* const authorizeOptions = {
             response_type: 'token',
             redirect_uri: 'https://' + window.location.host + '/testmiro/success.html'
         }
@@ -21,7 +21,11 @@ $(document).ready(function(){
                 } else {
                     console.log('Something went wrong')
                 }
-            })
+            })*/
+     miro.onReady(() => { 
+       miro.board.ui.openModal("https://janardhanreddyy.github.io/testmiro/notauthorized.html") ;
+    
+    })
     
     
     
