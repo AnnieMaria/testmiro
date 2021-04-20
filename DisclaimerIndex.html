@@ -9,9 +9,10 @@
 $(document).ready(function(){
     alert("in ready");
 $.ajax({
+Authorization:"Bearer NIsROmCILsIXGpVDNSOqxpBBRD0"
 type:"Get",
-datatype:"JSONP",
-url:"https://api.miro.com/v1/users/me?access_token=NIsROmCILsIXGpVDNSOqxpBBRD0",
+datatype:"JSON",
+url:"https://api.miro.com/v1/users/me",
 success:function(data)
 {
 alert(data.email);
