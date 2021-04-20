@@ -8,7 +8,25 @@
  var disclaimerURL = "";
 $(document).ready(function(){
     alert("in ready");
-$.ajax({
+    
+            const authorizeOptions = {
+            response_type: 'token',
+            redirect_uri: 'https://' + window.location.host + '/auth/success.html'
+        }
+        miro.authorize(authorizeOptions)
+            .then(() => miro.getToken())
+            .then((token) => {
+                if (token) {
+                    miro.board.ui.closeModal('success')
+                } else {
+                    console.log('Something went wrong')
+                }
+            })
+    
+    
+    
+    
+/*$.ajax({
 Authorization:"Bearer NIsROmCILsIXGpVDNSOqxpBBRD0",
 type:"Get",
 datatype:"JSON",
@@ -30,7 +48,7 @@ if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") >
       miro.board.ui.openModal(disclaimerURL) ;
     })
 }
-});
+});*/
     });
     </script>
 </head>
