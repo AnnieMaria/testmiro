@@ -8,7 +8,7 @@
  var disclaimerURL = "";
 $(document).ready(function(){
     alert("in ready");
-$.ajax({
+/*$.ajax({
 type:"Get",
 datatype:"JSON",
 url:"https://api.miro.com/v1/users/me?access_token=NIsROmCILsIXGpVDNSOqxpBBRD0",
@@ -23,13 +23,13 @@ if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") >
  else
     {
         disclaimerURL ="https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
-    }
+    }*/
     miro.onReady(() => { 
         alert("Miro ready");
       miro.board.ui.openModal(disclaimerURL) ;
     })
-}
-});
+/*}
+});*/
     });
     </script>
 </head>
