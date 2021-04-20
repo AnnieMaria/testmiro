@@ -3,10 +3,11 @@
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://miro.com/app/static/sdk.1.1.js"></script>
-    <script>
+    <script type="text/javascript">
  var userEmail = "";
  var disclaimerURL = "";
 $(document).ready(function(){
+    alert("in ready");
 $.ajax({
 type:"Get",
 datatype:"JSON",
@@ -17,13 +18,14 @@ alert(data.email);
 userEmail = data.email;
 if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") > -1 || userEmail.indexOf("@fmi.com") > -1  )
 {
-  disclaimerURL =   "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
+  disclaimerURL = "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
 }
  else
     {
-        disclaimerURL =   "https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
+        disclaimerURL ="https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
     }
-    miro.onReady(() => {  
+    miro.onReady(() => { 
+        alert("Miro ready");
       miro.board.ui.openModal(disclaimerURL) ;
     })
 }
