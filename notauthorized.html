@@ -32,8 +32,35 @@
             .then(() => miro.getToken())
             .then((token) => {
                 if (token) {
-                    miro.board.ui.closeModal('success')
+                    alert(token);
+                    var usertoken = "Bearer "+token;
+                    $.ajax({
+Authorization: usertoken,
+type:"Get",
+datatype:"JSON",
+url:"https://api.miro.com/v1/users/me",
+success:function(data)
+{
+alert(data.email);
+userEmail = data.email;
+if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") > -1 || userEmail.indexOf("@fmi.com") > -1  )
+{
+  disclaimerURL = "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
+}
+ else
+    {
+        disclaimerURL ="https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
+    }
+    miro.onReady(() => { 
+        alert("Miro ready");
+      miro.board.ui.openModal(disclaimerURL) ;
+    })
+}
+})
+                    
+    miro.board.ui.closeModal('success')
                 } else {
+                    alert("in else");
                     console.log('Something went wrong')
                 }
             })
