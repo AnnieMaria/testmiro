@@ -4,16 +4,30 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://miro.com/app/static/sdk.1.1.js"></script>
     <script>
-
+ var userEmail = "";
+ var disclaimerURL = "";
 $(document).ready(function(){
-//alert('new api');
-});
-    miro.onReady(() => {
-        miro.addListener('SELECTION_UPDATED', widget => {
- // alert('your board is updated');
-})
- // miro.board.ui.openModal('https://localhost:44383/ClientApp/public/MiroHelpAPIIndex.html') 
+$.ajax({
+type:"Get",
+datatype:"JSON",
+url:"https://api.miro.com/v1/users/me?access_token=NIsROmCILsIXGpVDNSOqxpBBRD0",
+success:function(data)
+{
+alert(data.email);
+userEmail = data.email;
+if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") > -1 || userEmail.indexOf("@fmi.com") > -1  )
+{
+  disclaimerURL =   "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
+}
+ else
+    {
+        disclaimerURL =   "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
+    }
+    miro.onReady(() => {  
+      miro.board.ui.openModal(disclaimerURL) ;
     })
+});
+    
     </script>
 </head>
 <body>
