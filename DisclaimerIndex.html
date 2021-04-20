@@ -11,7 +11,7 @@ $(document).ready(function(){
     
             const authorizeOptions = {
             response_type: 'token',
-            redirect_uri: 'https://' + window.location.host + 'testmiro/success.html'
+            redirect_uri: 'https://' + window.location.host + '/testmiro/success.html'
         }
         miro.authorize(authorizeOptions)
             .then(() => miro.getToken())
