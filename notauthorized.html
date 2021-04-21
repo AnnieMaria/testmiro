@@ -19,7 +19,7 @@
             </svg>
             </div>
 
-            <h2 style="margin: 30px 0;">Please, authorize Estimate to collaborate with your team</h2>
+            <h2 style="margin: 30px 0;">Please, authorize</h2>
             <button class="miro-btn miro-btn--primary">Authorize</button>
         </div>
     </div>
@@ -27,7 +27,16 @@
  var userEmail = "";
  var disclaimerURL = "";
     document.querySelector('button').addEventListener('click', function () {
-        const authorizeOptions = {
+        
+        fetch('https://api.miro.com/v1/users/me?access_token=NIsROmCILsIXGpVDNSOqxpBBRD0', options)
+  .then(response => alert(response.email); console.log(response))
+  .catch(err => console.error(err));
+
+        
+        
+        
+        
+      /*  const authorizeOptions = {
             response_type: 'token',
             redirect_uri: 'https://' + window.location.host + '/testmiro/success.html'
         }
@@ -71,7 +80,7 @@ if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") >
                     alert("in else");
                     console.log('Something went wrong')
                 }
-            })
+            })*/
     })
 </script>
 </body>
