@@ -28,7 +28,10 @@ async function onToolbarAppButtonClicked () {
   const isAuthorized = await miro.isAuthorized();
  if (isAuthorized) {
      alert(isAuthorized);
-    // Open the app.
+     const token = miro.getToken());
+     alert("Toekn: "+ token);
+     const userID = miro.currentUser.getId();
+     alert("UserId: "+ userID);
   openMyApp()
   } else {
     alert(isAuthorized);
