@@ -37,8 +37,12 @@
                 if (token) {
                     alert(token);
                     var usertoken = "Bearer "+token;
-                    $.ajax({
-Authorization: usertoken,
+                  
+ $.ajax({
+headers: {
+        'Content-Type': 'application/json',
+        authorization: usertoken
+      },
 type:"Get",
 datatype:"JSON",
 url:"https://api.miro.com/v1/users/me",
@@ -54,15 +58,16 @@ if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") >
     {
         disclaimerURL ="https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
     }
-    miro.onReady(() => { 
-        alert("Miro ready");
+   // miro.onReady(() => { 
+        //alert("Miro ready");
       miro.board.ui.openModal(disclaimerURL) ;
-    })
+   // })
 }
 })
                     
     miro.board.ui.closeModal('success')
-                } else {
+                } 
+            else {
                     alert("in else");
                     console.log('Something went wrong')
                 }
