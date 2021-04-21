@@ -10,13 +10,7 @@
         <div style="display: flex; width: 100%; justify-content: center; align-items: center; flex-direction: column;">
 
             <div style="width: 100px; height: 100px;">
-          /*  <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
-                <g id="icon-24" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd">
-                    <path d="M12 12 L 12 4 M12 12 L 18 12"/>
-                    <circle cx="12" cy="12" r="10"/>
-                    <circle cx="12" cy="12" r="1" fill="currentColor"/>
-                </g>
-            </svg>*/
+
             </div>
 
             <h2 style="margin: 30px 0;">Please, authorize</h2>
@@ -28,7 +22,7 @@
  var disclaimerURL = "";
     document.querySelector('button').addEventListener('click', function () {
         alert("on click");
-       await onToolbarAppButtonClicked();
+        onToolbarAppButtonClicked();
     }) 
 async function onToolbarAppButtonClicked () {
   const isAuthorized = await miro.isAuthorized();
