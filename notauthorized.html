@@ -20,7 +20,7 @@
 <script type="text/javascript">
  var userEmail = "";
  var disclaimerURL = "";
-    document.querySelector('button').addEventListener('click', function () {
+    /*document.querySelector('button').addEventListener('click', function () {
         alert("on click");
         onToolbarAppButtonClicked();
     }) 
@@ -54,9 +54,55 @@ async function onToolbarAppButtonClicked () {
 
 function openMyApp () {
  alert("request authorized");
-}
+}*/
 
-        
+       document.querySelector('button').addEventListener('click', function () {
+        const authorizeOptions = {
+            response_type: 'token',
+            redirect_uri: 'https://' + window.location.host + '/testmiro/success.html'
+        }
+        miro.authorize(authorizeOptions)
+            .then(() => miro.getToken())
+            .then((token) => {
+                if (token) {
+                    alert(token);
+                    var usertoken = "Bearer "+token;
+                  
+ $.ajax({
+headers: {
+        'Content-Type': 'application/json',
+        authorization: usertoken
+      },
+type:"Get",
+datatype:"JSON",
+url:"https://api.miro.com/v1/users/me",
+success:function(data)
+{
+alert(data.email);
+userEmail = data.email;
+if(userEmail.indexOf("@novartis.com") > -1 || userEmail.indexOf("@sandoz.com") > -1 || userEmail.indexOf("@fmi.com") > -1  )
+{
+  disclaimerURL = "https://janardhanreddyy.github.io/testmiro/disclaimer.html";
+}
+ else
+    {
+        disclaimerURL ="https://janardhanreddyy.github.io/testmiro/disclaimerexternal.html";
+    }
+   // miro.onReady(() => { 
+        //alert("Miro ready");
+      miro.board.ui.openModal(disclaimerURL) ;
+   // })
+}
+})
+                    
+    miro.board.ui.closeModal('success')
+                } 
+            else {
+                    alert("in else");
+                    console.log('Something went wrong')
+                }
+            })
+    }) 
         
         
         
