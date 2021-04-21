@@ -28,7 +28,7 @@
  var disclaimerURL = "";
     document.querySelector('button').addEventListener('click', function () {
         alert("on click");
-        onToolbarAppButtonClicked();
+       await onToolbarAppButtonClicked();
     }) 
 async function onToolbarAppButtonClicked () {
   const isAuthorized = await miro.isAuthorized()
@@ -36,9 +36,9 @@ async function onToolbarAppButtonClicked () {
     // Open the app.
   //  openMyApp()
   //} else {
-    
+    alert(isAuthorized);
     const installState = await fetch(
-      'https://janardhanreddyy.github.io/testmiro/success.html',
+      'https://miro.com/oauth/authorize/?response_type=code&client_id=3074457356942642030&redirect_uri=https%3A%2F%2Fjanardhanreddyy.github.io%2Ftestmiro%2Fnotauthorized.html',
       { credentials: 'same-origin' }
     ).then(res => res.text())
 
