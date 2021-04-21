@@ -10,13 +10,13 @@
         <div style="display: flex; width: 100%; justify-content: center; align-items: center; flex-direction: column;">
 
             <div style="width: 100px; height: 100px;">
-            <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          /*  <svg viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg">
                 <g id="icon-24" stroke="currentColor" stroke-width="2" fill="none" fill-rule="evenodd">
                     <path d="M12 12 L 12 4 M12 12 L 18 12"/>
                     <circle cx="12" cy="12" r="10"/>
                     <circle cx="12" cy="12" r="1" fill="currentColor"/>
                 </g>
-            </svg>
+            </svg>*/
             </div>
 
             <h2 style="margin: 30px 0;">Please, authorize</h2>
@@ -31,11 +31,12 @@
        await onToolbarAppButtonClicked();
     }) 
 async function onToolbarAppButtonClicked () {
-  const isAuthorized = await miro.isAuthorized()
- // if (isAuthorized) {
+  const isAuthorized = await miro.isAuthorized();
+ if (isAuthorized) {
+     alert(isAuthorized);
     // Open the app.
-  //  openMyApp()
-  //} else {
+  openMyApp()
+  } else {
     alert(isAuthorized);
     const installState = await fetch(
       'https://miro.com/oauth/authorize/?response_type=code&client_id=3074457356942642030&redirect_uri=https%3A%2F%2Fjanardhanreddyy.github.io%2Ftestmiro%2Fnotauthorized.html',
@@ -50,8 +51,8 @@ async function onToolbarAppButtonClicked () {
     })
 
     // Once authorized, open the app.
-    openMyApp()
- // }
+    openMyApp();
+  }
 }
 
 function openMyApp () {
