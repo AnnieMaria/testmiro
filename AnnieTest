@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://miro.com/app/static/sdk.1.1.js"></script>
+    <script type="text/javascript">
+      
+        $(document).ready(function(){
+
+        });
+    <script>
+    miro.onReady(() => {
+       miro.initialize({
+      miro.board.ui.openModal("https://github.com/janardhanreddyy/testmiro/blob/main/Success.html") ;
+        console.log("ready")
+       })
+    })
+        </script>
+    </script>
+</head>
+</html>
